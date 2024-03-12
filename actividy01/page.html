@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Senai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <ul class="nav_itens">
+            <a href="#at01Id" class="wrap_aHeader">Atividade 01</a>
+            <a href="#at02Id" class="wrap_aHeader">Atividade 02</a>
+            <a href="#at03Id" class="wrap_aHeader">Atividade 03</a>
+            <a href="#at04Id" class="wrap_aHeader">Atividade 04</a>
+            <a href="#at05Id" class="wrap_aHeader">Atividade 05</a>
+        </ul>
+    </header>
+    <main>
+        <section class="at01" id="at01Id">
+            <h2>Matricula</h2>
+            <div class="wrap_label">
+                <label for="matriculaId">Qual é a matricula?</label>
+                <input type="text" id="matriculaId" placeholder="matricula">
+                <label for="mensalidadeId">Qual o valor da mensalidade?</label>
+                <input type="number" id="mensalidadeId" placeholder="mensalidade">
+            </div>
+            <button type="button" onclick="confirmarAt01()" class="buttonMatricula" >Confirmar</button>
+            <p id="msgMatricula"></p>
+        </section>
+
+        <section class="at02" id="at02Id">
+            <h2>Input e Print</h2>
+            <div class="wrap_label">
+                <label for="codeId">Seu código</label>
+                <input type="password" id="codeId">
+                <label for="ageId">Sua idade</label>
+                <input type="number" id="ageId">
+                <label for="heightId">Sua altura</label>
+                <input type="number" id="heightId" placeholder="Em metros">
+                <label for="weightId">Seu peso</label>
+                <input type="number" id="weightId" placeholder="Kg">
+            </div>
+            <button type="button" onclick="confirmarAt02()" class="buttonInputs" >Confirmar</button>
+            <p id="msgInput"></p>
+        </section>
+
+        <section class="at03" id="at03Id">
+            <h2>Soma e Multiplicação</h2>
+            <div class="wrap_label">
+                <label for="num01">Primeiro Número</label>
+                <input type="number" id="num01">
+                <label for="num02">Segundo Número</label>
+                <input type="number" id="num02">
+            </div>
+            <div class="wrap_button">
+                <button type="button" onclick="calcularSoma()" class="soma" >Cálcular Soma</button>
+                <button type="button" onclick="calcularMult()" class="mult" >Cálcular Multiplicação</button>
+                
+            </div>
+        </section>
+
+        <section class="at04" id="at04Id">
+            <h2>Número n à 100</h2>
+
+        </section>
+
+        <section class="at05" id="at05Id">
+            <h2>Circunferência de um círculo</h2>
+
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

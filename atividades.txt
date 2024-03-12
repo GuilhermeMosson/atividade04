@@ -1,0 +1,152 @@
+1)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+	int mat;
+	float value;
+	
+	printf("Qual o Matricula:");
+   	 scanf("%d", &mat);
+	printf("Qual o valor da mensalidade:");
+	 scanf("%f", &value);
+	 
+	printf("O aluno %d paga mensalmente R$ %.2f \n",mat, value); 
+	
+system("pause");
+return 0;
+}
+
+
+2)input e print
+#include<stdio.h>
+#include<stdlib.h>
+
+//exercicio 9 aula prática
+
+int main(){
+	int code, age;
+	float height, weight;
+	
+	printf("Qual o codigo:");
+	 scanf("%d", &code);
+	printf("Qual o idade:");
+   	 scanf("%d", &age);
+	printf("Qual o altura:");
+	 scanf("%f", &height);
+	printf("Qual o peso:");
+	 scanf("%f", &weight);
+	printf("\n");
+	
+	printf("O CODIGO:%d \nA IDADE:%d \nA ALTURA:%.2f \nO PESO:%.2f \n", code, age,height, weight);
+	
+	system("pause");
+	return 0;	
+}
+
+
+3)soma e multiplicação
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+char calcula(int n1, int n2, int *p_soma, int *p_multi);
+
+
+int main(){
+	setlocale(LC_ALL,"Portuguese");
+	
+	int n1 = 0, n2 = 0, soma = 0, multi = 0, resp = 0;
+
+	
+	printf("DIGITE O PRIMEIRO NÚMERO:");
+	fflush(stdin);
+	scanf("%d",&n1);
+		
+	printf("DIGITE O SEGUNDO NÚMERO:");
+	fflush(stdin);
+	scanf("%d",&n2);
+	
+	resp = calcula(n1,n2, &soma, &multi);
+	
+
+	
+	printf("\nA soma dos 2 números informados é = %d.\n", soma);
+	printf("A multipicação dos 2 números informados é = %d.\n", multi);
+	printf("%c.\n\n\n",resp);
+	
+	system("pause");
+}
+char calcula(int n1, int n2, int *p_soma, int *p_multi){
+	
+	*p_soma = n1 + n2;
+	
+	
+	*p_multi = n1 * n2;
+	
+	
+	char pi;
+	
+	if(*p_soma % 2 == 0){
+		pi = 'P';
+		return(pi);
+	}
+	else{
+		pi = 'I';
+		return(pi);
+	}
+	
+	
+}
+
+
+4) escolher um Num para ir dele à 100
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void conta (int x);
+
+int main(){
+	setlocale(LC_ALL,"Portuguese");
+	int num;
+	
+	printf("Informe um número pra ir dele até 100:");
+	scanf("%d", &num);
+	conta(num);
+	
+	system("pause");
+	return 0;
+	
+}
+
+void conta (int x){
+		
+	if( x <= 100) {
+		printf("%d \n", x);
+		conta(x + 1);
+		
+	}
+}
+
+
+5) Raio circulo
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h> //biblioteca linguas
+const float PI = 3.1415; // com moldularização
+
+int main(){
+	setlocale(LC_ALL,"portuguese"); // para portugues
+	
+	float raio;
+	
+	fflush(stdin);
+	printf("Informe o raio do círculo:");
+	scanf("%f", &raio);
+	printf("A área do círculo é = %.3f m. \n", PI * raio*raio);
+	
+	system("pause");
+	return 0;
+	
+}
