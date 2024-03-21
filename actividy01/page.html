@@ -56,18 +56,32 @@
             <div class="wrap_button">
                 <button type="button" onclick="calcularSoma()" class="soma" >Cálcular Soma</button>
                 <button type="button" onclick="calcularMult()" class="mult" >Cálcular Multiplicação</button>
-                
+            </div>
+            <div class="result">
+                <p id="resulSoma"></p>
+                <p id="resulMult"></p>
             </div>
         </section>
 
         <section class="at04" id="at04Id">
             <h2>Número n à 100</h2>
-
+            <label for="numeroAt4">Digite um Número de 0 a 99</label>
+            <input type="number" id="numeroAt4">
+            <button onclick="contarAt04()">N à 100</button>
+            <div>
+                <p id="resAt4"></p>
+            </div>
         </section>
 
         <section class="at05" id="at05Id">
             <h2>Circunferência de um círculo</h2>
-
+            <label for="raio">Digite o raio do circulo</label>
+            <input type="number" id="raio">
+            <button onclick="calcularCircunferencia()">Calcular</button>
+            <div>
+                <p id="cincunResu">Circunferência: </p>
+                <div id="circulo"></div>
+            </div>
         </section>
     </main>
     <script src="script.js"></script>
