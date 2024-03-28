@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            width: 100%;
+            height: 65px;
+            background-color: rgba(0, 0, 0, 0.5);
+            min-height: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav_itens{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 3vw;
+        }
+
+        .wrap_aHeader{
+            color: aliceblue;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        .wrap_aHeader:hover{
+            opacity: 1;
+            text-shadow: 2px 2px 6px rgb(214, 214, 214);
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100%;
+            background: rgb(52,52,52);
+            background: radial-gradient(circle, rgba(52,52,52,1) 0%, rgba(17,17,18,1) 100%, rgba(71,71,71,1) 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .at05{
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3vh;
+            background-color: rgba(75, 75, 75, 0.568);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 80px;
+        }
+
+        h2, h3{
+            color: aliceblue;
+        }
+
+        label{
+            color: aliceblue;
+            font-size: 1.1rem;
+            margin-left: 15px;
+            margin-bottom: 5px
+        }
+
+        input{
+            border: none;
+            outline: none;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            background-color: rgb(250, 250, 250);
+            text-align: center;
+            border-radius: 999px;
+            height: 30px;
+            margin-bottom: 15px
+        }
+        .wrap_label{
+            padding-top: 3vh;
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            font-size: 1.2rem;
+            gap: 4vw;
+        }
+
+        .wrap_input{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2vh;
+        }
+        
+
+        button{
+            background-color: aliceblue;
+            color: black;
+            border: none;
+            outline: none;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        button:hover{
+            box-shadow: rgba(134, 134, 134, 0.363) 0px 10px 20px, rgba(126, 126, 126, 0.459) 0px 6px 6px;
+            opacity: 1;
+        }
+
+        .result{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            color: aliceblue;
+            font-size: 1.2rem;
+        }
+
+        .resultAlunos{
+            flex-direction: column;
+            align-items: center;
+            color: aliceblue;
+            font-size: 1.2rem;
+        }
+
+        .codigoC{
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.76);
+            color: #ffff;
+            border-radius: 10px;
+            margin-top: 5vh;
+            padding: 11px;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="nav_itens">
+            <a href="./atividade01.html" class="wrap_aHeader">Atividade 01</a>
+            <a href="./atividade02.html" class="wrap_aHeader">Atividade 02</a>
+            <a href="./atividade03.html" class="wrap_aHeader">Atividade 03</a>
+            <a href="./atividade04.html" class="wrap_aHeader">Atividade 04</a>
+            <a href="./atividade05.html" class="wrap_aHeader">Atividade 05</a>
+        </ul>
+    </header>
+
+    <div class="at05" id="at05Id">
+        <h2>Cálcular média de notas</h2>
+        <h3>Atividade 5</h3>
+        <label for="ident">Qual o número de identificção:</label>
+        <input type="number" id="ident">
+        <button onclick="show()">Confirmar</button>
+        <div class="wrap_label" id="notas">
+            <div class="wrap_input">
+                <label for="nota1">Qual sua 1ª nota(de 0 a 100):</label>
+                <input type="number" id="nota1">
+            </div>
+            <div class="wrap_input">
+                <label for="nota2">Qual sua 2ª nota(de 0 a 100):</label>
+                <input type="number" id="nota2">
+            </div>
+            <div class="wrap_input">
+                <label for="nota3">Qual sua 3ª nota(de 0 a 100):</label>
+                <input type="number" id="nota3">
+            </div>
+            <div class="wrap_input">
+                <label for="nota4">Qual sua 4ª nota(de 0 a 100):</label>
+                <input type="number" id="nota4">
+            </div>
+            <div class="wrap_input">
+                <label for="nota5">Qual sua 5ª nota(de 0 a 100):</label>
+                <input type="number" id="nota5">
+            </div>
+            <div class="wrap_input">
+                <label for="nota6">Qual sua 6ª nota(de 0 a 100):</label>
+                <input type="number" id="nota6">
+            </div>
+            <div class="wrap_input">
+                <label for="nota7">Qual sua 7ª nota(de 0 a 100):</label>
+                <input type="number" id="nota7">
+            </div>
+            <div class="wrap_input">
+                <label for="nota8">Qual sua 8ª nota(de 0 a 100):</label>
+                <input type="number" id="nota8">
+            </div>
+            <div class="wrap_input">
+                <label for="nota9">Qual sua 9ª nota(de 0 a 100):</label>
+                <input type="number" id="nota9">
+            </div>
+            <div class="wrap_input">
+                <label for="nota10">Qual sua 10ª nota(de 0 a 100):</label>
+                <input type="number" id="nota10">
+            </div>
+            <div class="wrap_input">
+                <label for="nota11">Qual sua 11ª nota(de 0 a 100):</label>
+                <input type="number" id="nota11">
+            </div>
+            <div class="wrap_input">
+                <label for="nota12">Qual sua 12ª nota(de 0 a 100):</label>
+                <input type="number" id="nota12">
+            </div>
+            <button onclick="limpar()">LIMPAR</button>
+        </div>
+        <button onclick="calcularMedia()" style="display: none;" id="botaoMedia">Cálcular notas</button>
+        <div id="result_id" class="result">
+            <p id="ident_id"></p>
+            <p id="media_id"></p>
+            <p id="conceito_id"></p>
+        </div>
+        <div id="result_alunos" class="resultAlunos">
+            <p id="alunoA"></p>
+            <p id="alunoE"></p>
+        </div>
+    </div>
+
+    <div class="codigoC">
+        <pre>
+            #include<stdio.h>
+                #include<stdlib.h>
+                #include<locale.h>
+                
+                int main(){
+                    setlocale(LC_ALL,"Portuguese");
+                    
+                    int num_id = 0, idade = 0, cont = 0;
+                    float nota = 0;
+                    float media = 0 ,somadasnotas = 0;
+                    char conceito;
+                    int alunosA = 0, alunosE = 0;
+                    int alunos = 0;
+                    
+                    printf("DIGITE SUA IDENTIFICAÇÃO PARA INFORMAR AS NOTAS OU 0 PARA SAIR\n\n");
+                    
+                    printf("Qual o número de identificção:\n");
+                    fflush(stdin);
+                    scanf("%d",&num_id);
+                    
+                    while(num_id > 0){
+                        
+                        for(cont = 0; cont < 12; cont++){
+                            printf("Qual sua %dª nota( de 0 a 100):\n",cont + 1);
+                            fflush(stdin);
+                            scanf("%f",&nota);
+                            
+                        somadasnotas = somadasnotas + nota;
+                            
+                        }
+                        
+                        alunos++;
+                        media = somadasnotas / 12;
+                        
+                        printf("Sua ID é %d\n",num_id);
+                        printf("Sua média é = %.2f\n",media);
+                        
+                        if(media >= 90){
+                            conceito = 'A';
+                            alunosA++;
+                            printf("Conceito = %c\n\n",conceito);
+                        }
+                        else{
+                            if(media >= 75 && media < 90){
+                                conceito = 'B';
+                                printf("Conceito = %c\n\n",conceito);
+                            }
+                            else{
+                                if(media >= 60 && media < 75){
+                                        conceito = 'C';
+                                        printf("Conceito = %c\n\n",conceito);
+                                }
+                                else{
+                                    if(media >= 40 && media < 60){
+                                            conceito = 'D';
+                                            printf("Conceito = %c\n\n",conceito);
+                                    }
+                                    else{
+                                        if(media < 40){
+                                                conceito = 'E';
+                                                alunosE++;
+                                                printf("Conceito = %c\n\n",conceito);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        printf("DIGITE SUA IDENTIFICAÇÃO PARA INFORMAR AS NOTAS OU 0 PARA SAIR\n");
+                        printf("Qual o número de identificção:\n");
+                        fflush(stdin);
+                        scanf("%d",&num_id);
+                        
+                        somadasnotas = 0;	
+                    }
+                    printf("%d aluno(s) calculados\n",alunos);
+                    printf("%d aluno(s) tiraram A\n",alunosA);
+                    printf("%d aluno(s) tiraram E\n",alunosE);
+                }
+        </pre>
+        <h3 style="background-color: rgb(66, 66, 66); width: auto;">Código em C</h3>
+    </div>
+    
+    <script>
+        function show(){
+            var identfy = document.getElementById('ident').valueAsNumber;
+            if(isNaN(identfy)){
+                alert('INSIRA UM CÓDIGO VÁILIDO')
+                return
+            }
+            document.getElementById('notas').style.display='flex'
+            document.getElementById('botaoMedia').style.display='flex'
+        }
+
+
+        var alunosComA = 0;
+        var alunosComE = 0;
+        function calcularMedia(){
+            var identfy = document.getElementById('ident').valueAsNumber;
+            var notas = [];
+
+            for(var x=1; x<=12;x++){
+                var inputId = 'nota' + x;
+                var nota = parseFloat(document.getElementById(inputId).value);
+                if(isNaN(nota) || nota < 0 || nota > 100){
+                    alert('Insira um valor válido entre 0 a 100')
+                    return
+                }
+                notas.push(nota)
+            }
+
+            var soma = 0
+            for(var y=0; y<notas.length; y++){
+                soma += notas[y];
+            }
+            var media = soma / notas.length;
+            console.log(media)
+
+            if(media >= 90){
+                var valorConceito = 'A';
+                alunosComA++;
+                console.log(alunosComA)
+            }else if(media>=75 && media<90){
+                var valorConceito = 'B';
+            }else if(media>=60 && media<75){
+                var valorConceito = 'C';
+            }else if(media>=40 && media<60){
+                var valorConceito = 'D';
+            }else if(media<40){
+                var valorConceito = 'E';
+                alunosComE++;
+                console.log(alunosComE)
+            }
+            document.getElementById('result_id').style.display='flex';
+            document.getElementById('ident_id').textContent = `Seu ID é ${identfy}`;
+            document.getElementById('media_id').textContent = `Sua média é = ${media.toFixed(2)}`;
+            document.getElementById('conceito_id').textContent = `Conceito =  ${valorConceito}`;
+            document.getElementById('alunoA').textContent= `Alunos que tiraram A: ${alunosComA}`;
+            document.getElementById('alunoE').textContent= `Alunos que tiraram E: ${alunosComE}`;
+        }
+
+        function limpar(){
+            var notas =[];
+            document.getElementById('notas').style.display='none';
+            document.getElementById('botaoMedia').style.display='none';
+            document.getElementById('result_id').style.display='none';
+            document.getElementById('ident').value = "";
+            for(var x=1; x<=12;x++){
+                var inputId = 'nota' + x;
+                document.getElementById(inputId).value = "";
+            }
+        }
+    </script>
+</body>
+</html>

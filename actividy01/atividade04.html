@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+    <style>
+                *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            width: 100%;
+            height: 65px;
+            background-color: rgba(0, 0, 0, 0.5);
+            min-height: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav_itens{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 3vw;
+        }
+
+        .wrap_aHeader{
+            color: aliceblue;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        .wrap_aHeader:hover{
+            opacity: 1;
+            text-shadow: 2px 2px 6px rgb(214, 214, 214);
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100%;
+            background: rgb(52,52,52);
+            background: radial-gradient(circle, rgba(52,52,52,1) 0%, rgba(17,17,18,1) 100%, rgba(71,71,71,1) 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .at04{
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3vh;
+            background-color: rgba(75, 75, 75, 0.568);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 80px;
+        }
+
+        h2, h3{
+            color: aliceblue;
+        }
+
+        label{
+            color: aliceblue;
+            font-size: 1.1rem;
+            margin-left: 15px;
+            margin-bottom: 5px
+        }
+
+        input{
+            border: none;
+            outline: none;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            background-color: rgb(250, 250, 250);
+            text-align: center;
+            border-radius: 999px;
+            height: 30px;
+            margin-bottom: 15px
+        }
+        button{
+            background-color: aliceblue;
+            color: black;
+            border: none;
+            outline: none;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        button:hover{
+            box-shadow: rgba(134, 134, 134, 0.363) 0px 10px 20px, rgba(126, 126, 126, 0.459) 0px 6px 6px;
+            opacity: 1;
+        }
+
+        .result{
+            color: aliceblue;
+            font-size: 1.2rem;
+        }
+
+        .codigoC{
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.76);
+            color: #ffff;
+            border-radius: 10px;
+            margin-top: 5vh;
+            padding: 11px;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="nav_itens">
+            <a href="./atividade01.html" class="wrap_aHeader">Atividade 01</a>
+            <a href="./atividade02.html" class="wrap_aHeader">Atividade 02</a>
+            <a href="./atividade03.html" class="wrap_aHeader">Atividade 03</a>
+            <a href="./atividade04.html" class="wrap_aHeader">Atividade 04</a>
+            <a href="./atividade05.html" class="wrap_aHeader">Atividade 05</a>
+        </ul>
+    </header>
+
+    <div class="at04" id="at04Id">
+        <h2>Número n à 100</h2>
+        <h3>Ativiade 04</h3>
+        <label for="numeroAt4">Digite um Número de 0 a 99</label>
+        <input type="number" id="numeroAt4">
+        <button onclick="contarAt04()">N à 100</button>
+        <div>
+            <p id="resAt4" class="result">___</p>
+        </div>
+    </div>
+
+    <div class="codigoC">
+        <pre>
+            #include <stdio.h>
+                #include <stdlib.h>
+                #include <locale.h>
+                
+                void conta (int x);
+                
+                int main(){
+                    setlocale(LC_ALL,"Portuguese");
+                    int num;
+                    
+                    printf("Informe um número pra ir dele até 100:");
+                    scanf("%d", &num);
+                    conta(num);
+                    
+                    system("pause");
+                    return 0;
+                    
+                }
+                
+                void conta (int x){
+                        
+                    if( x <= 100) {
+                        printf("%d \n", x);
+                        conta(x + 1);
+                        
+                    }
+                }
+        </pre>
+        <h3 style="background-color: rgb(66, 66, 66); width: auto;">Código em C</h3>
+    </div>
+
+    <script>
+        function contarAt04(){
+            var num = parseInt(document.getElementById('numeroAt4').value);
+            var resul = document.getElementById('resAt4');
+
+            if(num < 0 || num > 99){
+                alert('INSIRA UM NÚMERO DE 0 À 99');
+                return;
+            }
+
+            var resultado = ""
+            for (var cont = num; cont <= 99; cont++) {
+                resultado += cont + " - ";
+            }
+            resul.textContent = resultado + '100';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
